@@ -1,0 +1,58 @@
+.card {
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+
+  background: $foreground;
+  .dark & {
+    background: $darkFront;
+  }
+
+  .light & {
+    background: $lightBack;
+  }
+
+  border-radius: 5px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin: 0rem 0.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  a {
+    color: $highlight;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .cardHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    img {
+      border: 2px dashed $highlight;
+      border-radius: 5px;
+      height: 2.5rem;
+      width: 2.5rem;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+    }
+  }
+
+  .cardBody {
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,59 @@
+@import "../themes.scss";
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+button {
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+
+  margin: 0 0.5rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.3rem;
+  border: 1px solid $highlight;
+  border-radius: 30px 10px 10px 30px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease-out 0s !important;
+  cursor: pointer;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
+
+  svg {
+    font-size: 1.25rem;
+    margin-right: 0.3rem;
+  }
+}
+
+button:focus {
+  outline: 0;
+}
+
+.transition-up:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.25));
+}
+
+.transition-up:active {
+  transform: translateY(0px);
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.spin:hover {
+  svg {
+    transition: transform 0.5s ease-out 0s !important;
+    transform: rotate(360deg);
+  }
+}
+
+.shrink:hover {
+  svg {
+    transition: transform 0.15s ease-out 0s !important;
+    transform: scale(0.9);
+  }
+}
+
+.filled {
+  background: $highlight;
+  color: $lightBack;
+}

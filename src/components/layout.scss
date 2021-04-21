@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans|Palanquin&display=swap");
+@import "themes.scss";
+
+$background: $lightBack;
+$foreground: $lightFront;
+$primaryColor: $lightText;
+$secondaryColor: $lightMuted;
+
+// Transitions and animations
+/* #region */
+
+.pop {
+  cursor: pointer;
+  transition: all 0.15s ease-out 0s !important;
+}
+
+.pop:hover {
+  transform: translateY(-1.75px);
+}
+
+.pop:active {
+  transform: translateY(0px);
+}
+
+/* #endregion */
+
+// Top level elements (gatsby, html, body, p, h1, a, etc)
+/* #region */
+
+#___gatsby,
+#gatsby-focus-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+p {
+  margin: 0 0;
+  margin-bottom: 0.5rem;
+  color: $secondaryColor;
+
+  a {
+    color: $highlight;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: "Palanquin", sans-serif;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: lighter !important;
+  margin: 0;
+
+  color: $secondaryColor;
+}
+
+h3 {
+  font-family: "Palanquin", sans-serif;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 900 !important;
+  margin: 0 0;
+  margin-bottom: 0.75rem;
+}
+
+a {
+  @extend .pop;
+
+  color: $primaryColor;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+/* #endregion */
+
+// Layout elements (layout, main, containers)
+/* #region */
+
+.layoutBody {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  color: $primaryColor;
+  background: $background;
+}
+
+main {
+  padding: 2rem 0;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .containerSmall {
+    max-width: 400px;
+    margin: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      span {
+        -webkit-text-stroke: 0.25px $highlight;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  main {
+    padding: 0;
+  }
+  section {
+    padding: 1rem 0;
+  }
+}
+
+.v2 {
+  border-top: 1px solid rgb(221, 221, 221);
+  background: rgb(246, 249, 252);
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+/* #endregion */
+
+//Header
+/* #region */
+
+header {
+  padding: 1rem 0;
+}
+
+nav {
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 1.5rem;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .hline {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    padding-bottom: 0.4rem;
+    color: rgb(128, 136, 155);
+  }
+
+  h2:hover {
+    color: $primaryColor;
+    .dark & {
+      color: $darkText;
+    }
+
+    .light & {
+      color: $lightText;
+    }
+  }
+
+  a {
+    margin: 0 0.5rem;
+  }
+}
+
+.logo {
+  @extend .flex;
+  h1 {
+    padding-bottom: 0.5rem;
+  }
+
+  img {
+    width: 2rem;
+    margin-right: 0.4rem;
+  }
+}
+
+.mobileLinks {
+  display: none;
+}
+
+.desktopLinks {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .mobileLinks {
+    display: flex;
+  }
+
+  .desktopLinks,
+  .hline {
+    display: none;
+  }
+
+  .nav {
+    padding: 1.5rem 1rem;
+
+    span {
+      padding-bottom: 0.2rem;
+      font-size: 0.5rem;
+    }
+
+    .ant-switch-inner {
+      font-size: 0.75rem;
+    }
+  }
+
+  .logo {
+    h1 {
+      font-size: 1.1rem;
+      padding-bottom: 0.3rem;
+    }
+
+    img {
+      width: 1.5rem;
+      margin-right: 0.2rem;
+    }
+  }
+}
+
+/* #endregion */
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.btnGroup {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+  button {
+    margin: 0 0.4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .btnGroup {
+    flex-direction: column;
+
+    button {
+      margin: 0.25rem 0.4rem;
+    }
+  }
+}
+
+.highlight {
+  color: $highlight;
+}
+
+footer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  bottom: 0;
+  padding: 1rem 1rem;
+
+  text-align: center;
+  font-size: 0.7rem;
+}
