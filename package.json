@@ -1,7 +1,7 @@
 {
   "name": "al-gatsby-starter",
   "private": true,
-  "description": "idk, it's a gatsby starter",
+  "description": "it's a gatsby starter",
   "version": "0.1.0",
   "author": "Al Yin <altyin@gmail.com>",
   "dependencies": {

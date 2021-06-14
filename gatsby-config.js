@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `al-gatsby-starter`,
-    description: `idk, it's a gatsby starter`,
+    description: `it's a gatsby starter`,
     author: `Al Yin`,
   },
   plugins: [

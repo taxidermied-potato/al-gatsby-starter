@@ -1,4 +1,4 @@
-import { createStore as reduxCreateStore } from "redux"
+import { createStore } from "redux"
 
 const reducer = (state, action) => {
   return state
@@ -6,5 +6,5 @@ const reducer = (state, action) => {
 
 const initialState = {}
 
-const createStore = () => reduxCreateStore(reducer, initialState)
-export default createStore
+const store = createStore(reducer, initialState)
+export default store
